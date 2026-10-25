@@ -102,6 +102,8 @@ body {
 .btn[disabled] { opacity: .55; cursor: not-allowed; }
 
 .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: var(--space-2); }
+.chip-quick { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 1px; line-height: 1.2; padding: 6px 10px; }
+.chip-gloss { font-size: 10px; font-weight: 500; opacity: 0.72; letter-spacing: 0.01em; }
 
 /* ---------- parse card ---------- */
 .parse-card { margin-top: var(--space-3); border: 1px dashed color-mix(in oklab, var(--color-accent) 50%, var(--color-border)); border-radius: var(--radius-s); padding: var(--space-3); background: rgba(34,197,94,0.04); }

@@ -102,13 +102,13 @@
     },
     {
       "id": "t8",
-      "memberId": "m5",
+      "memberId": "m1",
       "type": "contribution",
-      "amount": 200,
+      "amount": 2000,
       "date": "2026-10-25",
       "note": "nakum (recorded offline)",
       "source": "utterance",
-      "recordedAt": "2026-10-25T03:43:36.157Z"
+      "recordedAt": "2026-10-25T03:45:45.222Z"
     }
   ],
   "loans": [
@@ -171,12 +171,33 @@
       "position": 4
     }
   ],
-  "settlementLedger": [],
+  "settlementLedger": [
+    {
+      "id": "s1",
+      "date": "2026-10-25",
+      "totalKes": 11200,
+      "usdtRateKes": 129,
+      "usdtAmount": 86.82,
+      "provider": "simulation",
+      "status": "simulated",
+      "treasurerNote": "Pot of KES 11,200 moved to the chama wallet as 86.82 USDT (test rate 129 KES/USDT)."
+    },
+    {
+      "id": "s2",
+      "date": "2026-10-25",
+      "totalKes": 11200,
+      "usdtRateKes": 129,
+      "usdtAmount": 86.82,
+      "provider": "wdk",
+      "status": "recorded",
+      "treasurerNote": "Pot of KES 11,200 moved to the chama wallet as 86.82 USDT (test rate 129 KES/USDT)."
+    }
+  ],
   "settings": {
     "settlementEnabled": false,
     "usdtRateKes": 129,
     "loanFactor": 3,
     "loanInterestPct": 10
   },
-  "updatedAt": "2026-10-25T03:43:36.157Z"
+  "updatedAt": "2026-10-25T03:47:26.979Z"
 }

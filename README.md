@@ -31,15 +31,19 @@ ChamaQi tears down all three at once:
 
 ## The 60-second demo (internet physically off)
 
-1. **`./run.sh`** → app at `http://localhost:4173`.
-2. Turn off Wi-Fi. (The app was started offline — `/api/settle`, `/api/utterance`, `/api/chat` make zero network calls in simulation/test mode.)
-3. Click a quick phrase: **"Amina amelipa zao 2000"** → the parse card shows `engine: deterministic` or `engine: qvac-llm`, the transaction appears on the arrears board, and the Swahili spoken summary at the bottom says today's pot, arrears and rotation out loud in text.
-4. Try the messy one — *"Tunapokea mwanachama mpya Faith"* → new member, rotation ladder extends.
-5. **LOAN "Baraka ameomba mkopo elfu tatu"** → the engine checks the 3x-lifetime cap, adds 10% flat interest, updates the arrears board.
-6. **Settle**: choose *Simulation (offline-safe)* → full USDT receipt (rates, address, memo, ref) printed, stamped `simulated`. Choose *WDK* → a self-custodial **draft** receipt with a locally-derived wallet path. Real transfers stay behind an explicit `broadcast:true`, always visible in the UI copy.
-7. Ask the chat box ("Ngapi imebaki kwa Baraka?") — answered from the ledger digest, locally, by the same LLM.
+The console's quick-phrase buttons are numbered in the UI — click them top-to-bottom while narrating:
 
-Nothing above touches a cloud. The **only** network-dependent step in the product is a real broadcast settlement, and it is disabled until the operator flips `broadcast` with a funded sandbox wallet.
+1. **`./run.sh`** → app at `http://localhost:4173`. Turn off Wi-Fi.
+2. **Chip ¹ (contribution)** — *"Amina amelipa zao 2000"* books a KES 2,000 monthly saving instantly. The parse card shows which engine did it (`deterministic` for clean phrases, `qvac-llm` for messy ones) and the Swahili spoken summary at the bottom updates.
+3. **Chip ² (loan request)** — *"Baraka ameomba mkopo elfu tatu"*: the engine checks the 3×-lifetime cap, adds 10% flat interest, and the arrears board updates. Say it out loud in your own words — the words can be typed wrong by a human, the number math cannot be wrong by the app.
+4. **Chip ³ (payout)** — *"Cheptoo alipokea kando mia tano"*: merry-go-round payout booked, rotation ladder still has exactly one "receives now" seat.
+5. **Chip ⁴ (loan repayment)** — a payment lands against an open loan, outstanding balance drops live.
+6. **Chip ⁶ (new member)** — *"Tunapokea mwanachama mpya Faith"* joins a new member and extends the rotation.
+7. **Free-typing** — type any mess you like (*"Sema tutumie zao ya Diana na Esther elfu moja"*): the grammar misses it on purpose-truth, the local LLM takes over, and the engine **audits the model's answer against the roster before booking anything**. If the model guesses an action nobody said, the app refuses — an honest refusal is a feature you can demonstrate.
+8. **Settle (Kuhamisha Kikapu)** — *Simulation* prints a full USDT receipt stamped `simulated`; *WDK* derives a self-custodial wallet address on-device and returns a `prepared-draft` receipt. Real transfers stay behind an explicit `broadcast` gate.
+9. The first page open auto-warms the local LLM (chip flips to **"LLM: tayari"** in ~3–5s when the cached model loads). Until then everything already works deterministically.
+
+Nothing above touches a cloud. The **only** network-dependent step in the product is a real broadcast settlement, disabled until the operator flips `broadcast` with a funded sandbox wallet.
 
 ## Quickstart (2 commands)
 
