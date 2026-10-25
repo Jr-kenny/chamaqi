@@ -99,6 +99,16 @@
       "date": "2026-07-04",
       "note": "",
       "source": "manual"
+    },
+    {
+      "id": "t8",
+      "memberId": "m5",
+      "type": "contribution",
+      "amount": 200,
+      "date": "2026-10-25",
+      "note": "nakum (recorded offline)",
+      "source": "utterance",
+      "recordedAt": "2026-10-25T03:43:36.157Z"
     }
   ],
   "loans": [
@@ -168,5 +178,5 @@
     "loanFactor": 3,
     "loanInterestPct": 10
   },
-  "updatedAt": "2026-10-25T03:37:09.772Z"
+  "updatedAt": "2026-10-25T03:43:36.157Z"
 }

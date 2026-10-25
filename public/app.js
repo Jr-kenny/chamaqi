@@ -29,9 +29,9 @@ async function api(path, body = null) {
 function renderStats(s) {
   el.statRow.innerHTML = '';
   const stats = [
-    { label: 'Chama Baki (pot)', value: fmt(s.pot), hint: 'yesu baada ya hizo zote', cls: 'stat-accent' },
+    { label: 'Kikapu cha Chama (pot)', value: fmt(s.pot), hint: 'baada ya matumizi, malipo na mikopo', cls: 'stat-accent' },
     { label: 'Michango (collected to date)', value: fmt(s.contributions), hint: `${s.members} wanachama × ${fmt(s.monthlyContribution)}` },
-    { label: 'Kiwango cha Ukungu', value: `${s.collectionRatePct}%`, hint: 'expected-to-date collection' },
+    { label: 'Kiwango cha Ukusanyaji', value: `${s.collectionRatePct}%`, hint: 'expected-to-date collection' },
   ];
   for (const st of stats) {
     const d = document.createElement('div');
@@ -75,7 +75,7 @@ function showParse(data) {
     payout: 'Kando (payout) imetolewa',
     add_member: 'Mwanachama mpya (member added)',
   };
-  el.parseEngine.textContent = ok ? `engine: ${data.engine || 'deterministic'}` : 'SIWEZI KUCHEKA';
+  el.parseEngine.textContent = ok ? `engine: ${data.engine || 'deterministic'}` : 'Imeshindikana';
   el.parseIntent.textContent = ok ? `✓ ${intentMeta[data.intent] || data.intent}` : `✗ ${data.reason || 'parse failed'}`;
   const amt = data.amount ? fmt(data.amount) : '';
   const who = data.memberName || data.memberId || '—';
@@ -90,6 +90,11 @@ async function refresh() {
   renderSnapshot(r.snapshot);
 }
 
+// Warm the local QVAC LLM shortly after first open (cached locally, no network).
+api('/api/model', {})
+  .then(() => refresh())
+  .catch(() => {});
+
 function renderSnapshot(snap) {
   el.chamaName.textContent = `${snap.state.name} · ${snap.state.members.length} wanachama`;
   renderStats(snap.summary);
@@ -100,9 +105,9 @@ function renderSnapshot(snap) {
 }
 
 function setModelChip(model) {
-  if (model.loaded) { el.modelChip.textContent = 'QVAC LLM ndio'; el.modelChip.parentElement.classList.add('chip-ok'); }
-  else if (model.attempted) { el.modelChip.textContent = 'LLM itajaribiwa…'; }
-  else { el.modelChip.textContent = 'deterministic ndio'; }
+  if (model.loaded) { el.modelChip.textContent = 'LLM: tayari'; el.modelChip.parentElement.classList.add('chip-ok'); }
+  else if (model.attempted) { el.modelChip.textContent = 'LLM: inapakia…'; }
+  else { el.modelChip.textContent = 'LLM: booting…'; }
 }
 
 el.utterForm.addEventListener('submit', async (e) => {

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ChamaQi — Msaidizi wa Mwanzia</title>
+  <title>ChamaQi — Msaidizi wa Mweka Hazina</title>
   <meta name="description" content="Offline-first treasurer copilot for chamas. Local AI, no cloud, no API key." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E1223'/%3E%3Cpath d='M8 23 16 9l8 14-8-4.5L8 23z' fill='%2322C55E'/%3E%3C/svg%3E" />
@@ -17,13 +17,13 @@
       </svg>
       <div>
         <h1 class="brand-name">ChamaQi</h1>
-        <p class="brand-sub" id="chama-name">—</p>
+        <p class="brand-sub" id="chama-name">Msaidizi wa Mweka Hazina</p>
       </div>
     </div>
     <div class="top-status">
-      <span class="chip chip-ok" title="Yote ya AI hii inafanya kazi bila intaneti">
+      <span class="chip chip-ok" title="Kila sehemu ya AI inafanya kazi bila intaneti">
         <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="m8 13 3 3 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        YiFaa Bila Intaneti
+        Inafanya Kazi Bila Intaneti
       </span>
       <span class="chip" id="model-chip" title="Hali ya LLM ya QVAC ya ndani">
         <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 9h6v6H9z" fill="currentColor"/></svg>
@@ -33,17 +33,17 @@
   </header>
 
   <main class="grid">
-    <!-- ============ Hifadhi ya Matamko / Utterance Console ============ -->
+    <!-- ============ Console ============ -->
     <section class="card console-card" aria-labelledby="console-heading">
-      <h2 id="console-heading">Dawati la Matamko</h2>
-      <p class="card-sub">Sema au andika kwa Kiswahili au English — ChamaQi hubadilisha matamko kuwa rekodi malipo. AI hufanya kazi ndani ya kompyuta hii, hakuna wingu.</p>
+      <h2 id="console-heading">Dawati la Mweka Hazina</h2>
+      <p class="card-sub">Andika kwa Kiswahili au English — ChamaQi inabadilisha matamko kuwa rekodi za michango, mikopo na madeni. AI yote inafanya kazi ndani ya kompyuta hii; hakuna wingu, hakuna funguo.</p>
       <form id="utterance-form" autocomplete="off">
-        <label class="visually-hidden" for="utterance">Matamko ya mwanzia</label>
+        <label class="visually-hidden" for="utterance">Mukaririko wa mweka hazina</label>
         <div class="input-row">
           <input id="utterance" name="text" placeholder="Mfano: Amina amelipa zao 2,000" spellcheck="false" />
           <button type="submit" class="btn btn-primary">Weka Rekodi</button>
         </div>
-        <div class="chip-row" role="group" aria-label="Vifungu vya haraka">
+        <div class="chip-row" role="group" aria-label="Vishazi vya haraka vya jaribio">
           <button type="button" class="chip chip-quick" data-phrase="Amina amelipa zao 2000">Amina amelipa zao 2000</button>
           <button type="button" class="chip chip-quick" data-phrase="Baraka ameomba mkopo elfu tatu">Baraka ameomba mkopo elfu tatu</button>
           <button type="button" class="chip chip-quick" data-phrase="Cheptoo alipokea kando mia tano">Cheptoo alipokea kando mia tano</button>
@@ -62,30 +62,30 @@
       </div>
 
       <div class="spoken-box">
-        <p class="spoken-label">Ripoti ya Sauti (inawaka bila modeli)</p>
+        <p class="spoken-label">Ripoti ya Sauti (inafanya kazi bila modeli)</p>
         <p class="spoken-text" id="spoken-text">Hakuna ripoti bado.</p>
       </div>
     </section>
 
-    <!-- ============ Dijiti ya Chama / Dashboard ============ -->
-    <section class="digest-stack" aria-label="Dijitali ya chama">
+    <!-- ============ Dashboard ============ -->
+    <section class="digest-stack" aria-label="Dashibodi ya chama">
       <div class="stat-row" id="stat-row"></div>
 
       <div class="card">
-        <h2>Baraza ya Michango</h2>
+        <h2>Hali ya Michango na Madeni</h2>
         <div id="arrears-table" class="table" role="table"></div>
       </div>
 
       <div class="card">
-        <h2>Rotari ya Kando</h2>
+        <h2>Mzunguko wa Kando</h2>
         <ol id="rotation-list" class="rot-list"></ol>
       </div>
 
       <div class="card settle-card">
-        <h2>Kuhamisha Kanda</h2>
-        <p class="card-sub">Mtihani (test-mode) kwa chaguo-msingi: huna kwa kufunga kanda halisi kuiweka halisi — Rudia <code>kuinternet</code> kwa neno <code>broadcast</code> ukiwa na pesa halisi.</p>
+        <h2>Kuhamisha Kikapu (Settle)</h2>
+        <p class="card-sub">Test mode kwa chaguo-msingi: hutoa risiti kamili ya USDT bila kubadilisha pesa halisi. Uhamisho wa kweli unahitaji utaratibu wa <code>broadcast</code> na pochi iliyowekewa pesa.</p>
         <div class="input-row">
-          <select id="settle-provider" aria-label="Chagua mtoa huduma ya kuhamisha">
+          <select id="settle-provider" aria-label="Chagua mtoa huduma wa kuhamisha">
             <option value="simulation">Simulation (offline-safe)</option>
             <option value="wdk">WDK (self-custodial draft)</option>
           </select>
@@ -97,7 +97,7 @@
   </main>
 
   <footer class="foot">
-    <p>ChamaQi · AI ya on-device · hakuna wingu, hakuna funguo za API · kila rekodi ina hai kwenye awamu lako</p>
+    <p>ChamaQi · AI ya ndani (on-device) · hakuna wingu, hakuna funguo za API · kila rekodi inaandikwa kwenye kumbukumbu yako</p>
   </footer>
 
   <script src="app.js"></script>

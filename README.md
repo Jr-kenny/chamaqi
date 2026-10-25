@@ -1,6 +1,6 @@
 <div align="center">
 
-# ChamaQi (Mshikaji wa Mwanzia)
+# ChamaQi (Msaidizi wa Mweka Hazina)
 
 **The offline-first AI treasurer copilot for chamas.**
 Turn a treasurer's spoken Swahili or English into a clean ledger — **on the device, with the internet switched off** — then settle the pot self-custodially in USDT when connectivity returns.

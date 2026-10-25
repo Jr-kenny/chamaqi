@@ -46,6 +46,7 @@ const MIME = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.
 
 function send(res, code, body, type = 'application/json') {
   res.writeHead(code, { 'Content-Type': type, 'Cache-Control': 'no-store' });
+  if (Buffer.isBuffer(body)) return res.end(body);
   res.end(typeof body === 'string' ? body : JSON.stringify(body));
 }
 
