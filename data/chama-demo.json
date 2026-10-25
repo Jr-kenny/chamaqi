@@ -34,6 +34,12 @@
       "name": "Esther",
       "joined": "2026-05-02",
       "phone": "+254700000005"
+    },
+    {
+      "id": "m6",
+      "name": "faith",
+      "joined": "2026-10-25",
+      "phone": ""
     }
   ],
   "transactions": [
@@ -109,6 +115,26 @@
       "note": "nakum (recorded offline)",
       "source": "utterance",
       "recordedAt": "2026-10-25T03:45:45.222Z"
+    },
+    {
+      "id": "t9",
+      "memberId": "m1",
+      "type": "contribution",
+      "amount": 2000,
+      "date": "2026-10-25",
+      "note": "nakum (recorded offline)",
+      "source": "utterance",
+      "recordedAt": "2026-10-25T03:48:27.083Z"
+    },
+    {
+      "id": "t10",
+      "memberId": "m3",
+      "type": "payout",
+      "amount": 500,
+      "date": "2026-10-25",
+      "note": "merry-go-round payout",
+      "source": "utterance",
+      "recordedAt": "2026-10-25T03:49:47.286Z"
     }
   ],
   "loans": [
@@ -147,6 +173,18 @@
       ],
       "status": "approved",
       "reason": null
+    },
+    {
+      "id": "l3",
+      "memberId": "m2",
+      "principal": 3000,
+      "interest": 300,
+      "outstanding": 3300,
+      "issuedAt": "2026-10-25",
+      "dueDate": "2027-01-25",
+      "repayments": [],
+      "status": "approved",
+      "reason": null
     }
   ],
   "rotation": [
@@ -169,6 +207,10 @@
     {
       "memberId": "m5",
       "position": 4
+    },
+    {
+      "memberId": "m6",
+      "position": 5
     }
   ],
   "settlementLedger": [
@@ -191,6 +233,26 @@
       "provider": "wdk",
       "status": "recorded",
       "treasurerNote": "Pot of KES 11,200 moved to the chama wallet as 86.82 USDT (test rate 129 KES/USDT)."
+    },
+    {
+      "id": "s3",
+      "date": "2026-10-25",
+      "totalKes": 13200,
+      "usdtRateKes": 129,
+      "usdtAmount": 102.33,
+      "provider": "wdk",
+      "status": "recorded",
+      "treasurerNote": "Pot of KES 13,200 moved to the chama wallet as 102.33 USDT (test rate 129 KES/USDT)."
+    },
+    {
+      "id": "s4",
+      "date": "2026-10-25",
+      "totalKes": 9900,
+      "usdtRateKes": 129,
+      "usdtAmount": 76.74,
+      "provider": "simulation",
+      "status": "simulated",
+      "treasurerNote": "Pot of KES 9,900 moved to the chama wallet as 76.74 USDT (test rate 129 KES/USDT)."
     }
   ],
   "settings": {
@@ -199,5 +261,5 @@
     "loanFactor": 3,
     "loanInterestPct": 10
   },
-  "updatedAt": "2026-10-25T03:47:26.979Z"
+  "updatedAt": "2026-10-25T03:49:50.107Z"
 }
