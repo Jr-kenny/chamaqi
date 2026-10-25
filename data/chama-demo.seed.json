@@ -1,0 +1,41 @@
+{
+  "name": "chama-demo",
+  "currency": "KES",
+  "monthlyContribution": 2000,
+  "cycleStart": "2026-05-01",
+  "createdAt": "2026-05-01T09:00:00.000Z",
+  "members": [
+    { "id": "m1", "name": "Amina", "joined": "2026-05-01", "phone": "+254700000001" },
+    { "id": "m2", "name": "Baraka", "joined": "2026-05-01", "phone": "+254700000002" },
+    { "id": "m3", "name": "Cheptoo", "joined": "2026-05-01", "phone": "+254700000003" },
+    { "id": "m4", "name": "Diana", "joined": "2026-05-02", "phone": "+254700000004" },
+    { "id": "m5", "name": "Esther", "joined": "2026-05-02", "phone": "+254700000005" }
+  ],
+  "transactions": [
+    { "id": "t1", "memberId": "m1", "type": "contribution", "amount": 2000, "date": "2026-05-04", "note": "nakum ya Mwanzo", "source": "manual" },
+    { "id": "t2", "memberId": "m2", "type": "contribution", "amount": 2000, "date": "2026-05-05", "note": "nakum ya Mwanzo", "source": "manual" },
+    { "id": "t3", "memberId": "m3", "type": "contribution", "amount": 4000, "date": "2026-05-06", "note": "nakum ya siku", "source": "manual" },
+    { "id": "t4", "memberId": "m1", "type": "contribution", "amount": 2000, "date": "2026-06-03", "note": "", "source": "manual" },
+    { "id": "t5", "memberId": "m2", "type": "contribution", "amount": 2000, "date": "2026-06-05", "note": "", "source": "manual" },
+    { "id": "t6", "memberId": "m3", "type": "expense", "amount": 500, "date": "2026-06-06", "note": "statement", "source": "manual" },
+    { "id": "t7", "memberId": "m2", "type": "contribution", "amount": 2000, "date": "2026-07-04", "note": "", "source": "manual" }
+  ],
+  "loans": [
+    { "id": "l1", "memberId": "m2", "principal": 3000, "interest": 300, "outstanding": 3300, "issuedAt": "2026-05-10", "dueDate": "2026-08-10", "repayments": [{ "amount": 1000, "date": "2026-06-20", "source": "manual" }], "status": "approved", "reason": null },
+    { "id": "l2", "memberId": "m1", "principal": 1500, "interest": 150, "outstanding": 1000, "issuedAt": "2026-05-12", "dueDate": "2026-08-12", "repayments": [{ "amount": 650, "date": "2026-06-15", "source": "manual" }], "status": "approved", "reason": null }
+  ],
+  "rotation": [
+    { "memberId": "m1", "position": 0 },
+    { "memberId": "m2", "position": 1 },
+    { "memberId": "m3", "position": 2 },
+    { "memberId": "m4", "position": 3 },
+    { "memberId": "m5", "position": 4 }
+  ],
+  "settlementLedger": [],
+  "settings": {
+    "settlementEnabled": false,
+    "usdtRateKes": 129,
+    "loanFactor": 3,
+    "loanInterestPct": 10
+  }
+}

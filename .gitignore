@@ -1,0 +1,9 @@
+node_modules/
+.qvac/
+node-logs/
+dist/
+evidence/*.jsonl
+!.gitkeep
+.DS_Store
+*.log
+qvac.config.json

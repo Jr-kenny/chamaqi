@@ -1,0 +1,22 @@
+{
+  "name": "chamaqi",
+  "version": "1.0.0",
+  "description": "ChamaQi — offline-first treasurer copilot for chamas. Local QVAC AI turns Swahili/English speech or text into a ledger; deterministic engine checks arrears and merry-go-round rotation; WDK settles the pot in USDt when online.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.17.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "demo": "node server.js --demo-seed",
+    "test": "node --test",
+    "validate": "node scripts/validate.js",
+    "audit-log": "node scripts/generate-audit-log.js"
+  },
+  "dependencies": {
+    "@qvac/sdk": "^0.22.0",
+    "@tetherto/wdk": "^1.0.0-beta.22",
+    "@tetherto/wdk-wallet-evm": "^1.0.0-beta.24"
+  }
+}
