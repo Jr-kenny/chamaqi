@@ -143,7 +143,8 @@ body {
 .code-block { margin: var(--space-3) 0 0; padding: var(--space-3); background: #05070f; border: 1px solid var(--color-border); border-radius: var(--radius-s); font-family: var(--mono); font-size: 12px; color: #c9e8d5; overflow: auto; max-height: 260px; }
 
 /* ---------- footer ---------- */
-.foot { padding: var(--space-3) var(--space-4); border-top: 1px solid var(--color-border); color: var(--color-muted-foreground); font-size: 12px; text-align: center; }
+.foot { padding: var(--space-3) var(--space-4); border-top: 1px solid var(--color-border); color: var(--color-muted-foreground); font-size: 12px; text-align: center; display: grid; gap: 8px; justify-items: center; }
+#reset-demo.confirming { color: var(--color-destructive); border-color: var(--color-destructive); }
 
 /* ---------- a11y ---------- */
 .visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }

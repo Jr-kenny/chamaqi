@@ -100,7 +100,7 @@ const server = createServer(async (req, res) => {
 
       if (url.pathname === '/api/utterance') {
         const parsed = await intentFrom(state, body.text, {});
-        if (!parsed.ok) return send(res, 200, { ok: false, ...parsed, heartbeats: reportPackets() });
+        if (!parsed.ok) return send(res, 200, { ok: false, ...parsed, modelState: modelStatus(), heartbeats: reportPackets() });
         const applied = applyIntent(state, parsed, { lang: body.lang || 'sw' });
         save(state);
         return send(res, 200, { ok: true, intent: parsed, applied, snapshot: snapshot() });

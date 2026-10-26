@@ -81,7 +81,16 @@ function showParse(data) {
   const who = data.memberName || data.memberId || '—';
   el.parseSummary.textContent = ok
     ? `${data.text || ''}  →  intent ${data.intent}, member ${who}, ${amt}`
-    : `${data.hint || data.reason || ''}`;
+    : warmHint(data);
+}
+
+/** Friendly, honest copy for a refusal — including the "AI still booting" case. */
+function warmHint(data) {
+  const ms = data.modelState;
+  if (ms && ms.attempted && !ms.loaded) {
+    return 'The built-in grammar could not match this phrase, and the local LLM is still booting (takes a few seconds from cache). Click again shortly — then it will parse.';
+  }
+  return data.hint || data.reason || 'Phrase not matched. Try: "<name> amelipa zao <amount>".';
 }
 
 async function refresh() {
@@ -143,6 +152,26 @@ el.settleBtn.addEventListener('click', async () => {
       : `✚ ${r.error || 'settle failed'}`;
     await refresh();
   } finally { el.settleBtn.disabled = false; }
+});
+
+// Two-step confirm: first click arms the button, second click wipes to the seed.
+let resetArmed = null;
+document.querySelector('#reset-demo').addEventListener('click', async (e) => {
+  const btn = e.currentTarget;
+  if (!resetArmed) {
+    btn.classList.add('confirming');
+    btn.textContent = ' ↺ Bonyeza tena kuthibitisha (click again to confirm)';
+    resetArmed = setTimeout(() => { btn.classList.remove('confirming'); btn.textContent = ' ↺ Reset demo chama'; resetArmed = null; }, 3000);
+    return;
+  }
+  clearTimeout(resetArmed); resetArmed = null;
+  btn.classList.remove('confirming'); btn.textContent = ' ↺ Reset demo chama';
+  const r = await api('/api/reset', {});
+  if (r.ok) {
+    el.parseCard.classList.add('hidden');
+    el.settleResult.classList.add('hidden');
+    await refresh();
+  }
 });
 
 refresh();
