@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ChamaQi — narrator audition</title>
+<style>
+  :root { color-scheme: dark; }
+  body { font-family: -apple-system, "Segoe UI", Roboto, sans-serif; background:#0a1020; color:#e5ebff; margin:0; padding:28px; }
+  h1 { font-size:20px; margin:0 0 4px; }
+  .sub { color:#8fa0c9; font-size:13px; margin:0 0 22px; }
+  .set { background:#111a30; border:1px solid #233355; border-radius:12px; margin-bottom:18px; padding:14px 16px; max-width:760px; }
+  .set h2 { font-size:15px; margin:0 0 2px; }
+  .accent { color:#8fa0c9; font-size:12px; }
+  .row { display:flex; align-items:center; gap:10px; padding:6px 0; border-top:1px solid #1b2740; }
+  .row:first-of-type { border-top:0; }
+  .row audio { height:28px; flex:1; max-width:520px; }
+  .name { font-size:12px; color:#c3cff0; width:190px; }
+  .star { font-size:11px; color:#f0c96a; }
+</style>
+</head>
+<body>
+<h1>Narrator audition — ChamaQi demo</h1>
+<p class="sub">Pick the voice for your demo video. 7 beats each; the full script lives in <code>demo-audio/SHOTLIST.md</code>.</p>
+
+<div class="set">
+  <h2>Asilia — Kenyan English ♀ <span class="star">★ my pick</span></h2>
+  <div class="accent">en-KE-AsiliaNeural · ~1:45 total · Saotheast-learner parliament vibe for a chama product</div>
+  <div class="row"><span class="name">01 intro</span><audio controls preload="none" src="Asilia/01-intro.mp3"></audio></div>
+  <div class="row"><span class="name">02 contribution</span><audio controls preload="none" src="Asilia/02-contribution.mp3"></audio></div>
+  <div class="row"><span class="name">03 loan</span><audio controls preload="none" src="Asilia/03-loan.mp3"></audio></div>
+  <div class="row"><span class="name">04 payout + member</span><audio controls preload="none" src="Asilia/04-payout-and-member.mp3"></audio></div>
+  <div class="row"><span class="name">05 hard mode / refusal</span><audio controls preload="none" src="Asilia/05-hard-mode.mp3"></audio></div>
+  <div class="row"><span class="name">06 settle</span><audio controls preload="none" src="Asilia/06-settle.mp3"></audio></div>
+  <div class="row"><span class="name">07 outro</span><audio controls preload="none" src="Asilia/07-outro.mp3"></audio></div>
+</div>
+
+<div class="set">
+  <h2>Abeo — Nigerian English ♂</h2>
+  <div class="accent">en-NG-AbeoNeural · ~1:35 total · warm male, West-African cadence</div>
+  <div class="row"><span class="name">01 intro</span><audio controls preload="none" src="Abeo/01-intro.mp3"></audio></div>
+  <div class="row"><span class="name">05 hard mode / refusal</span><audio controls preload="none" src="Abeo/05-hard-mode.mp3"></audio></div>
+  <div class="row"><span class="name">07 outro</span><audio controls preload="none" src="Abeo/07-outro.mp3"></audio></div>
+</div>
+
+<div class="set">
+  <h2>Ezinne — Nigerian English ♀</h2>
+  <div class="accent">en-NG-EzinneNeural · ~1:37 total · clear female, West-African cadence</div>
+  <div class="row"><span class="name">01 intro</span><audio controls preload="none" src="Ezinne/01-intro.mp3"></audio></div>
+  <div class="row"><span class="name">05 hard mode / refusal</span><audio controls preload="none" src="Ezinne/05-hard-mode.mp3"></audio></div>
+  <div class="row"><span class="name">07 outro</span><audio controls preload="none" src="Ezinne/07-outro.mp3"></audio></div>
+</div>
+
+<div class="set">
+  <h2>Fallbacks — built-in Mac voices (robotic)</h2>
+  <div class="accent">daniel = en_GB · beats = Tessa en_ZA · regenerate anytime with scripts/make-voiceover.sh</div>
+  <div class="row"><span class="name">Daniel (GB) intro</span><audio controls preload="none" src="daniel/01-intro.m4a"></audio></div>
+  <div class="row"><span class="name">Tessa (ZA) intro</span><audio controls preload="none" src="beats/01-intro.m4a"></audio></div>
+</div>
+
+<p class="sub">Other free voices on demand: <code>./scripts/make-voiceover-edge.sh Andrew</code> (warm US male), <code>Luke</code> / <code>Leah</code> (South African), <code>Ryan</code> (British), or <code>RATE=+8% ./scripts/make-voiceover-edge.sh Asilia</code> to speed any set up.</p>
+</body>
+</html>
