@@ -3,13 +3,15 @@
 ## Pick your narrator first (all free, no accounts)
 
 Three full narration sets are already rendered in `demo-audio/`, 7 beats each.
-**✅ SELECTED: `demo-audio/Abeo/` (Abeo ♂, Nigerian English, ~1:35)** — use this set.
+**✅ FINAL: `demo-audio/Abeo/` (Abeo ♂, ~1:35)** — the chosen narrator. (Caveat noted by the operator: no free TTS tier captures a true Nigerian cadence; Abeo is simply the best voice available. Alternative sets remain cached below.)
 
 | Folder | Voice | Accent | Total | Status |
 |---|---|---|---|---|
-| `demo-audio/Abeo/` | Abeo ♂ | **Nigerian English** | 1:35 | ✅ **SELECTED** |
-| `demo-audio/Asilia/` | Asilia ♀ | **Kenyan English** | 1:45 | alternate |
-| `demo-audio/Ezinne/` | Ezinne ♀ | **Nigerian English** | 1:37 | alternate |
+| `demo-audio/Abeo/` | Abeo ♂ | en-NG | 1:35 | ✅ **FINAL** |
+| `demo-audio/Elimu/` | Elimu ♂ | en-TZ | 1:47 | alternate |
+| `demo-audio/Imani/` | Imani ♀ | en-TZ | 1:54 | alternate |
+| `demo-audio/Asilia/` | Asilia ♀ | en-KE | 1:45 | alternate |
+| `demo-audio/Ezinne/` | Ezinne ♀ | en-NG | 1:37 | alternate |
 | `demo-audio/daniel/`, `demo-audio/beats/` | built-in Mac `say` | British / US robotic fallback | 1:54 | backup |
 
 Audition any beat in your browser: open `demo-audio/audition.html`.
