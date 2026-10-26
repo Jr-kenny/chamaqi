@@ -99,6 +99,16 @@
       "date": "2026-07-04",
       "note": "",
       "source": "manual"
+    },
+    {
+      "id": "t8",
+      "memberId": "m1",
+      "type": "contribution",
+      "amount": 2000,
+      "date": "2026-10-26",
+      "note": "nakum (recorded offline)",
+      "source": "utterance",
+      "recordedAt": "2026-10-26T02:31:56.732Z"
     }
   ],
   "loans": [
@@ -137,6 +147,18 @@
       ],
       "status": "approved",
       "reason": null
+    },
+    {
+      "id": "l3",
+      "memberId": "m2",
+      "principal": 3000,
+      "interest": 300,
+      "outstanding": 3300,
+      "issuedAt": "2026-10-26",
+      "dueDate": "2027-01-26",
+      "repayments": [],
+      "status": "approved",
+      "reason": null
     }
   ],
   "rotation": [
@@ -165,12 +187,12 @@
     {
       "id": "s1",
       "date": "2026-10-26",
-      "totalKes": 9200,
+      "totalKes": 11200,
       "usdtRateKes": 129,
-      "usdtAmount": 71.32,
+      "usdtAmount": 86.82,
       "provider": "wdk",
       "status": "recorded",
-      "treasurerNote": "Pot of KES 9,200 moved to the chama wallet as 71.32 USDT (test rate 129 KES/USDT)."
+      "treasurerNote": "Pot of KES 11,200 moved to the chama wallet as 86.82 USDT (test rate 129 KES/USDT)."
     }
   ],
   "settings": {
@@ -179,5 +201,5 @@
     "loanFactor": 3,
     "loanInterestPct": 10
   },
-  "updatedAt": "2026-10-26T02:12:26.595Z"
+  "updatedAt": "2026-10-26T02:32:14.128Z"
 }
