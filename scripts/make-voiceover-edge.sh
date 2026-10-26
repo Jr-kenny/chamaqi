@@ -14,6 +14,7 @@ case "$SLUG" in
   Ezinne) VOICE=en-NG-EzinneNeural ;;  Andrew) VOICE=en-US-AndrewNeural ;;
   AndrewM) VOICE=en-US-AndrewMultilingualNeural ;; Luke) VOICE=en-ZA-LukeNeural ;;
   Leah) VOICE=en-ZA-LeahNeural ;;     Ryan) VOICE=en-US-RyanNeural ;;
+  Elimu) VOICE=en-TZ-ElimuNeural ;;   Imani) VOICE=en-TZ-ImaniNeural ;;
   *) VOICE="$SLUG" ;;
 esac
 RATE="${RATE:-+0%}"
