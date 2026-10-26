@@ -66,6 +66,14 @@ body {
 }
 .digest-stack { display: grid; gap: clamp(12px, 1.5vw, 24px); }
 
+/* ---- anti-bleed armor: no child may ever force the page wider than the window ---- */
+.grid > * { min-width: 0; }
+.digest-stack > * { min-width: 0; }
+.card { min-width: 0; }
+.input-row > * { min-width: 0; }
+.code-block { max-width: 100%; overflow-x: auto; }
+.parse-summary, .spoken-text, .stat-value { overflow-wrap: break-word; }
+
 .card {
   background: var(--color-card);
   border: 1px solid var(--color-border);
