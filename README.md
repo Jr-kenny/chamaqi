@@ -17,6 +17,8 @@ Turn a treasurer's spoken Swahili or English into a clean ledger — **on the de
 
 Kenya has hundreds of thousands of chamas — community savings groups whose entire financial brain lives in one notebook, held by one treasurer, at one meeting. Three hard walls break every attempt to digitize that brain:
 
+> **Group-savings software exists — all of it lives in a data center. ChamaQi is the intelligence layer that lives in the treasurer's hands: it works when the network doesn't, and it never books a figure the ledger can't prove.**
+
 | Wall | Why it kills existing tools |
 |---|---|
 | **No internet at the meeting** | Cloud chama apps (web dashboards, M-Pesa-linked portals) are unusable in the field, which is exactly where the ledger is written. |
