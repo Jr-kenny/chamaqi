@@ -26,6 +26,16 @@ async function api(path, body = null) {
   return r.json();
 }
 
+/* Proportional surface scaling: the whole UI grows/shrinks with the window
+ * like a camera-framed dashboard, within readable floors.
+ * 1440px = 1.0; fullscreen video (~1700px) ≈ 1.18; narrow panes floor at 0.85. */
+function applyScale() {
+  const z = Math.min(1.2, Math.max(0.85, window.innerWidth / 1440));
+  document.documentElement.style.zoom = z.toFixed(3);
+}
+window.addEventListener('resize', applyScale);
+applyScale();
+
 function renderStats(s) {
   el.statRow.innerHTML = '';
   const stats = [
